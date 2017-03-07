@@ -4,9 +4,11 @@
   "description": "__learning Node, Mongo, Mongoose, Express, and EJS__",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "babel-node server.js",
+      "client": "babel-node start-client.js"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fresh5447/ejs-bears.git"
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/fresh5447/ejs-bears#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "concurrently": "^3.4.0",
     "ejs": "^2.5.5",
     "express": "^4.14.1",
     "mongoose": "^4.8.2"
